@@ -12,4 +12,9 @@ class Servicio extends Model
     protected $fillable = [
         'desc_serv',
 ];
+public function caracteristicas()
+    {
+        return $this->belongsToMany(Caracteristica::class);
+    }
 }
+

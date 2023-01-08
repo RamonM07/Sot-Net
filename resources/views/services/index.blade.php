@@ -24,17 +24,20 @@
             
                         <table class="table">
                                 <thead style="table-secondary">                                     
-                                    <th>Nombre Servicio</th>                                  
+                                    <th>Nombre Servicio</th>
+                                    <th>Características</th>                                  
                                     <th>Acciones</th>                                                                   
                               </thead>
                               <tbody class="table-group-divider">
-                            @foreach ($servicios as $servicio)
+                            @foreach ($lista_c as $lista)
                             <tr>
-                                <td >{{ $servicio->desc_serv}}</td>
+                                <td >{{ $lista->desc_serv}}</td>
+                                
+                                <td >{{ $lista->desc_caracteristica}} <br></br></td>
                                 <td>
 
-                                    <form action="{{ route('services.destroy', $servicio->id) }}" method="POST"> 
-                                    <a class="btn btn-info" href="{{ route('services.edit', $servicio->id) }}">Editar</a>                                       
+                                    <form action="{{ route('services.destroy', $lista->id) }}" method="POST"> 
+                                    <a class="btn btn-info" href="{{ route('services.edit', $lista->id) }}">Editar</a>                                       
                                         <!-- @can('editar-edicione')-->
                                         
                                        <!-- @endcan)-->

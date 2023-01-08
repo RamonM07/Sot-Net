@@ -19,12 +19,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body >
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light  shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color:#bdd5ff">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name') }}
+                    <img src="{{asset('images/logo.jpg')}}" alt="Logo" width="150" height="70" class="d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

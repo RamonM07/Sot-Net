@@ -25,18 +25,20 @@
                         <table class="table">
                                 <thead style="table-secondary">                                     
                                     <th>Nombre Paquete</th>
-                                    <th>Costo</th>                                    
+                                    <th>Costo</th>
+                                    <th>Servicios</th>                                 
                                     <th>Acciones</th>                                                                   
                               </thead>
                               <tbody class="table-group-divider">
-                            @foreach ($paquetes as $paquete)
+                            @foreach ($lista_p as $listapaquete)
                             <tr>
-                                <td >{{ $paquete->desc_pack }}</td>                                
-                                <td>{{ $paquete->costo_pack }}</td>
+                                <td >{{ $listapaquete->desc_pack }}</td>                                
+                                <td>{{ $listapaquete->costo_pack }}</td>
+                                <td>{{ $listapaquete->desc_serv }}</td>
                                 <td>
 
-                                    <form action="{{ route('packages.destroy', $paquete->id) }}" method="POST"> 
-                                    <a class="btn btn-info" href="{{ route('packages.edit', $paquete->id) }}">Editar</a>                                       
+                                    <form action="{{ route('packages.destroy', $listapaquete->paquete_id) }}" method="POST"> 
+                                    <a class="btn btn-info" href="{{ route('packages.edit', $listapaquete->paquete_id) }}">Editar</a>                                       
                                         <!-- @can('editar-edicione')-->
                                         
                                        <!-- @endcan)-->

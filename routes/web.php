@@ -5,6 +5,7 @@ use App\Http\Controllers\PaqueteController;
 use App\Http\Controllers\CaracteristicaController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\AsignaCaracterísticasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,4 @@ Route::resource('packages',PaqueteController::class);
 Route::resource('characteristics',CaracteristicaController::class);
 Route::resource('services',ServicioController::class);
 Route::resource('users',UsuarioController::class);
+Route::post('/services/create',[AsignaCaracterísticasController::class, 'store']);

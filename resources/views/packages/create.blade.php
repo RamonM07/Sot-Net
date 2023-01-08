@@ -42,9 +42,34 @@
                                    <br></br>
                                    <input type="text" name="costo_pack" class="form-control">
                                 </div>
+                            </div>
+                        </div>
+                            <div class = "col-2 text-center"></div>
+                            <label for="servicios" class = "text-center">Seleccione los Servicios del Paquete</label>
+                            <br></br>
+                            @foreach ($servicios as $serv)
+                            <div class = "col-4">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id ="" name="servicio[]" value="{{$serv->id}}">
+                                    <label class="form-check-label" for="servicios">
+                                        {{ $serv->desc_serv }}
+                                    </label>
+                                </div>
+                            </div>
+                            @endforeach
+                            <div class="row">
+                            <div class = "col-2"></div>
+                            <div class = "col-4">
                                 <br></br>
                                 <button type="submit" class="btn btn-primary">Guardar</button> 
-                            </div>   
+                            </div>
+                            <div class = "col-2"></div>
+                            <div class = "col-4">
+                                <br></br>
+                                <a class="btn btn-danger  card-link" href="{{url('packages')}}">Cancelar</a>
+                            </div>
+                        </div>
+                    </div>    
                     </form>
                     
                         </div>

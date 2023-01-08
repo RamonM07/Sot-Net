@@ -1,17 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Paquete;
+use App\Models\AgregaServicios;
+use App\Models\Servicio;
 
 class PaqueteController extends Controller
 {
     public function index()
     {
-        $paquetes = Paquete::paginate(10);
-        
-        return view('packages.index',compact('paquetes'));
+        $paquetes = Paquete::all();
+        $lista_p = DB::table('agrega_servicios')
+        ->join('paquetes', 'paquetes.id', '=', 'agrega_servicios.paquete_id')
+        ->join('servicios', 'servicios.id', '=', 'agrega_servicios.servicio_id')
+        ->select('servicios.desc_serv', 'servicios.id','paquetes.desc_pack','agrega_servicios.paquete_id', 'paquetes.costo_pack')
+        ->groupBy('agrega_servicios.paquete_id','servicios.id','servicios.desc_serv', 'paquetes.desc_pack', 'paquetes.costo_pack')
+        ->get();
+        return view('packages.index',compact('paquetes', 'lista_p'));
     }
 
     /**
@@ -21,7 +28,8 @@ class PaqueteController extends Controller
      */
     public function create()
     {
-        return view('packages.create');
+        $servicios = Servicio::all();
+        return view('packages.create',compact ('servicios'));
     }
 
     /**
@@ -37,7 +45,18 @@ class PaqueteController extends Controller
             'costo_pack'=> 'required',
         ]);
         
-        Paquete::create($request->all());
+        $paquete =Paquete::create($request->all());
+        
+        foreach($request->servicio as $serv=>$id){
+            $asignaserv = [
+                $request->servicio[$serv],
+            ];
+            AgregaServicios::create([
+                'paquete_id'=>$paquete->id,
+                'servicio_id'=>$id,
+            ]);
+        }
+        //dd($request->all());
         return redirect()->route('packages.index');
     }
 
