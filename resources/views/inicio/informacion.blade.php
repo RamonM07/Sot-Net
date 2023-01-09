@@ -10,7 +10,6 @@
       <p class="lead fw-normal">Somos un equipo profesional en temas de internet y telecomunicaciones con mas de 15 años de experiencia</p>
       <p class="lead fw-normal">Contrata nuestros servicios</p>
       <p class="lead fw-normal">Contactanos</p>
-      <a class="btn btn-outline-secondary" href="#">Activar</a>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>

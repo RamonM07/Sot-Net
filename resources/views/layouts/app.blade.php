@@ -32,6 +32,9 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
                         <li class = "nav-item">
+                                <a href="{{url('clients')}}" class = "nav-link @yield('clients_active')">Clientes</a>
+                        </li>
+                        <li class = "nav-item">
                                 <a href="{{url('packages')}}" class = "nav-link @yield('packages_active')">Paquetes</a>
                         </li>
                         <li class = "nav-item">

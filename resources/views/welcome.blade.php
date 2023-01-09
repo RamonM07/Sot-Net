@@ -61,7 +61,7 @@
                             </ul>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link active text-muted" href="{{ route('services.index') }}">Servicios</a>
+                            <a class="nav-link active text-muted" href="{{url('inicio/servicios')}}">Servicios</a>
                             </li>
                         </ul>
                         </div>
@@ -97,7 +97,7 @@
                 <li>Descargas ilimitadas</li>
                 <li>Costo de instalación a partir de $1500</li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Contratar</button>
+              <a href="{{url('inicio/solicitudes')}}" class="btn btn-lg btn-block btn-primary">Contratar</a>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@
                 <li>Descargas ilimitadas</li>
                 <li>Servicio de television</li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Contratar</button>
+              <a href="{{url('inicio/solicitudes')}}" class="btn btn-lg btn-block btn-primary">Contratar</a>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@
                 <li>Equipo para conectar varios dispositivos</li>
                 <li>Seguridad de navegación</li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Contratar</button>
+              <a href="{{url('inicio/solicitudes')}}" class="btn btn-lg btn-block btn-primary">Contratar</a>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\CaracteristicaController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\AsignaCaracterísticasController;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,14 @@ Route:: group(['prefix'=>'inicio', 'as'=>'inicio'], function () {
     {
         return view ('inicio.licencias');
     });
+    Route:: get ("/solicitudes", function ()
+    {
+        return view ('inicio.solicitudes');
+    });
+    Route:: get ("/servicios", function ()
+    {
+        return view ('inicio.servicios');
+    });
 
 });
 Auth::routes();
@@ -47,4 +56,5 @@ Route::resource('packages',PaqueteController::class);
 Route::resource('characteristics',CaracteristicaController::class);
 Route::resource('services',ServicioController::class);
 Route::resource('users',UsuarioController::class);
+Route::resource('clients',ClienteController::class);
 Route::post('/services/create',[AsignaCaracterísticasController::class, 'store']);
